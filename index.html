@@ -1,0 +1,492 @@
+---
+layout: null
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="4D Scene Editing Framework">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic-eDiTor: Training-Free Text-Driven 4D Scene Editing with Multimodal Diffusion Transformer  </title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kalam:wght@300;400&family=Shadows+Into+Light&family=Google+Sans&family=Noto+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="./Videos_for_project_page/static/css/bulma.min.css">
+  <link rel="stylesheet" href="./Videos_for_project_page/static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./Videos_for_project_page/static/css/index.css">
+  <link rel="stylesheet" href="./Videos_for_project_page/static/css/styles.css">
+  <link rel="stylesheet" href="./Videos_for_project_page/static/css/video_styles.css">
+  <link rel="stylesheet" href="./Videos_for_project_page/static/css/slidebar-container.css">
+  <link rel="icon" href="./Videos_for_project_page/static/images/favicon.svg">
+
+  <!-- Optional CSS (Remove if not needed) -->
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./Videos_for_project_page/static/js/fontawesome.all.min.js"></script>
+  <script src="./Videos_for_project_page/static/js/bulma-carousel.min.js"></script>
+  <script src="./Videos_for_project_page/static/js/bulma-slider.min.js"></script>
+  <script src="./Videos_for_project_page/static/js/index.js"></script>
+  <style>
+    /* Title + Logo inline layout */
+    .title-with-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .title-with-logo .title-logo {
+      height: clamp(100px, 9vw, 120px);
+      width: auto;
+      object-fit: contain;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="title-with-logo">
+            <img class="title-logo" src="./Videos_for_project_page/static/imgs/Gemini_Generated_logo.png" alt="Project logo">
+            <h1 class="title is-1 publication-title">Dynamic-eDiTor: Training-Free Text-Driven 4D Scene Editing with Multimodal Diffusion Transformer
+            </h1>
+          </div>
+          <div class="is-size-5 publication-authors">
+
+            <!-- Authors with clickable links -->
+            <span class="author-block">
+              <a href="https://di-lee.github.io/" target="_blank">Dong In Lee</a><sup>1,2*</sup>
+            </span>
+          
+            <span class="author-block">
+              <a href="https://danieldoh.github.io/" target="_blank">Hyungjun Doh</a><sup>1*</sup>
+            </span>
+          
+            <span class="author-block">
+              <a href="https://sgchi.github.io/" target="_blank">Seunggeun Chi</a><sup>1</sup>
+            </span>
+          
+            <span class="author-block">
+              <a href="https://runlinduan.com/" target="_blank">Runlin Duan</a><sup>1</sup>
+            </span>
+          
+            <span class="author-block">
+              <a href="https://kuaicv.com/professor/?theme=pub/antoniau0026hide_banners=true" target="_blank">Sangpil Kim</a><sup>2†</sup>
+            </span>
+          
+            <span class="author-block">
+              <a href="https://engineering.purdue.edu/~ramani/wordpress/" target="_blank">Karthik Ramani</a><sup>1†</sup>
+            </span>
+          
+            <!-- Affiliations -->
+            <br>
+            <br>
+            <span class="author-block"><sup>1</sup> Purdue University</span>
+            <span class="author-block"><sup>2</sup> Korea University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span> -->
+
+                <!-- </a>
+
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- Teaser Videos Section -->
+<section class="hero teaser" style="background-color: #cecece6c; padding: 20px; border-radius: 8px;">
+  <div class="container is-max-desktop">
+    <div class="video-grid compact">
+      <!-- Row 1: bear -->
+      <figure class="grid-item">
+        <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
+          <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/src/sear_steak.mp4" type="video/mp4">
+        </video>
+        <figcaption style="font-family: 'Kalam', cursive; margin-top: 0px;">
+          <strong> Source 4D Rendering <br>"Sear Steak"</strong>
+        </figcaption>
+      </figure>
+      <figure class="grid-item">
+        <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
+          <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/ours/sear_steak_red_shirt.mp4" type="video/mp4">
+        </video>
+        <figcaption style="font-family: 'Kalam', cursive; margin-top: 0px;">
+          <strong> "Change his clothes into a <br><span style='color: #b20e0e;'>red shirt</span>" </strong>
+        </figcaption>
+      </figure>
+      <figure class="grid-item">
+        <video id="teaser2" class="sync-video" autoplay muted loop playsinline>
+          <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/src/flame_salmon_1.mp4" type="video/mp4">
+        </video>
+        <figcaption style="font-family: 'Kalam', cursive; margin-top: 0px;">
+          <strong> Source 4D Rendering <br>"Flame Salmon" </strong>
+        </figcaption>
+      </figure>
+      <figure class="grid-item">
+        <video id="teaser3" class="sync-video" autoplay muted loop playsinline>
+          <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/ours/flame_salmon_1_blue_glow_salmon.mp4" type="video/mp4">
+        </video>
+        <figcaption style="font-family: 'Kalam', cursive; margin-top: 0px;">
+          <strong> "Make the salmon <br><span style='color: #0253c5;'>glow with a magical blue light</span>" </strong>
+        </figcaption>
+      </figure>
+
+      <!-- Row 2 -->
+      <figure class="grid-item">
+        <video id="teaser4" class="sync-video" autoplay muted loop playsinline>
+          <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/src/coffee_martini.mp4" type="video/mp4">
+        </video>
+        <figcaption style="font-family: 'Kalam', cursive; margin-top: 0px;">
+          <strong> Source 4D Rendering <br> "Coffee Martini"</strong>
+        </figcaption>
+      </figure>
+      <figure class="grid-item">
+        <video id="teaser5" class="sync-video" autoplay muted loop playsinline>
+          <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/ours/coffee_martini_yellow_cap.mp4" type="video/mp4">
+        </video>
+        <figcaption style="font-family: 'Kalam', cursive; margin-top: 0px;">
+          <strong> "Change his cap into a <br><span style='color: #acba18;'>yellow cap</span>" </strong>
+        </figcaption>
+      </figure>
+      <figure class="grid-item">
+        <video id="teaser6" class="sync-video" autoplay muted loop playsinline>
+          <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/src/cut_roasted_beef.mp4" type="video/mp4">
+        </video>
+        <figcaption style="font-family: 'Kalam', cursive; margin-top: 0px;">
+          <strong>Source 4D Rendering <br>"Cut Roasted Beef" </strong>
+        </figcaption>
+      </figure>
+      <figure class="grid-item">
+        <video id="teaser7" class="sync-video" autoplay muted loop playsinline>
+          <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/ours/cut_roasted_beef_charcoal.mp4" type="video/mp4">
+        </video>
+        <figcaption style="font-family: 'Kalam', cursive; margin-top: 0px;">
+          <strong>  Change the scene into a <br><span style='color: #6f6f70;'>charcoal drawing</span>" </strong>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <h2 class="subtitle has-text-centered" style="width: 100%; margin: 1px 0 0;">
+    <span class="dnerf"><strong> Dynamic-eDiTor</span> </strong> demonstrates its capability for high-quality 4D scene editing, ensuring both multi-view and temporal consistency.
+  </h2>
+</section>
+<script src="./Videos_for_project_page/static/js/sync-videos.js"></script>
+
+<script>
+function playAllPageVideos() {
+  document.querySelectorAll('video').forEach(function (v) {
+    // Ensure muted to satisfy autoplay policies
+    v.muted = true;
+    if (v.paused) {
+      v.play().catch(function () { /* ignore autoplay policy errors */ });
+    }
+  });
+}
+
+function pauseAllPageVideos() {
+  document.querySelectorAll('video').forEach(function (v) {
+    if (!v.paused) {
+      v.pause();
+    }
+  });
+}
+
+document.addEventListener('visibilitychange', function () {
+  if (document.visibilityState === 'visible') {
+    playAllPageVideos();
+  } else {
+    pauseAllPageVideos();
+  }
+});
+
+window.addEventListener('focus', playAllPageVideos);
+window.addEventListener('pageshow', playAllPageVideos);
+</script>
+
+<br>
+
+<!-- Main Figure Section -->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0px 0 0;">
+        <div class="column" style="width: 10%; padding: 0;">
+            <h2 class="title is-3"> Overview </h2> 
+        <img src="./Videos_for_project_page/static/imgs/Main_fig.png" alt="Teaser" style="width: 70%; height: auto;" />
+        <figcaption class="custom-caption">
+          <strong> Dynamic-eDiTor Overview.</strong> We represent the multi-view video as a unified camera-time grid. Dynamic-eDiTor combines <strong>Spatio-Temporal Sub-Grid Attention (STGA)</strong>, which performs locally coherent cross-view and temporal fusion within each sub-grid, with <strong>Context Token Propagation (CTP)</strong>, which globally propagates the aggregated features across the grid via Full Token Inheritance and Flow-guided Token Replacement for robust spatio-temporal consistency enforcement. Together, these modules enable seamless, globally consistent multi-view video editing without additional training, while directly optimizing the pre-trained 4DGS.
+      </figcaption>
+  </figure>
+    </div>    
+  </div>
+</div>
+</section>
+
+<br> 
+<h2 class="subtitle has-text-centered">
+</h2>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 50px 0 0;">
+        <div class="column" style="width: 80%; padding: 0;">
+            <h2 class="title is-3"> Abstract </h2>
+            <div class="content has-text-justified">
+              Recent progress in 4D representations, such as Dynamic NeRF and 4D Gaussian Splatting (4DGS), has enabled dynamic 4D scene reconstruction. However, text-driven 4D scene editing remains under-explored due to the challenge of ensuring both multi-view and temporal consistency across space and time during editing.
+              Existing studies rely on 2D diffusion models that edit frames independently, often causing motion distortion, geometric drift, and incomplete editing. We introduce Dynamic-eDiTor, a training-free text-driven 4D editing framework leveraging Multimodal Diffusion Transformer (MM-DiT) and 4DGS. This mechanism consists of Spatio-Temporal Sub-Grid Attention (STGA) for locally consistent cross-view and temporal fusion, and Context Token Propagation (CTP) for global propagation via token inheritance and optical-flow-guided token replacement. Together, these components allow Dynamic-eDiTor to perform seamless, globally consistent multi-view video without additional training and directly optimize pre-trained source 4DGS.
+              Extensive experiments on multi-view video dataset DyNeRF demonstrate that our method achieves superior editing fidelity and both multi-view and temporal consistency prior approaches.
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+
+
+    <!-- Comparison Slider -->
+
+          <h2 class="subtitle" style="font-family: 'Kalam', cursive; text-align: center; font-size: 1.5em;">
+            📷 <strong> Click </strong> on video to play or pause. <strong> Move</strong> mouse to change the hover  📷
+          </h2>
+
+            <!-- Tabs -->
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="container h-100 pt-3 pb-3">
+                  <div class="row g-4">
+                    <div class="col-12 col-lg-6">
+                      <div class="custom-video-block-face" style="width: 60%;">
+                        <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 18px; margin-bottom: 8px;">
+                          "Change his clothes into a <span style='color: #b20e0e;'>red shirt</span>"
+                        </h3>
+                        <div style="display: flex; justify-content: space-between; text-align: center; font-size: 15px; margin-bottom: 6px; padding: 5px;">
+                          <span style="margin-left: 10px;"><strong>Ctrl-D</strong></span>
+                          <span style="margin-right: 10px;"><strong>Dynamic-eDiTor (Ours)</strong></span>
+                        </div>
+                        <div class="video-compare-container-face" data-slider>
+                          <video class="left-video" id="face-left-video" loop autoplay muted playsinline preload="metadata">
+                            <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/ours/sear_steak_red_shirt.mp4" type="video/mp4">
+                            <!-- <source src="./Dynamic-eDiTor_video_result/ours/sear_steak_superman.mp4" type="video/mp4"> -->
+                          </video>
+                          <div class="slider-bar">
+                            <div class="slider-divider"></div>
+                            <video class="right-video" id="face-right-video" loop autoplay muted playsinline preload="metadata">
+                              <source src="./Videos_for_project_page/static/baselines_rendering/ctrl-d_sear_steak_redshirt.mp4" type="video/mp4">
+                              <!-- <source src="./static/baselines_rendering/ctrl-d_sear_steak_superman.mp4" type="video/mp4"> -->
+                            </video>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                      <div class="custom-video-block-face" style="width: 60%;">
+                        <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 18px; margin-bottom: 8px;">
+                          Change the scene into a <span style="color: #b20e0e;">fire emergency</span>"
+                        </h3>
+                        <div style="display: flex; justify-content: space-between; text-align: center; font-size: 15px; margin-bottom: 6px; padding: 5px;">
+                          <span style="margin-left: 10px;"><strong>Instruct-4DGS</strong></span>
+                          <span style="margin-right: 10px;"><strong>Dynamic-eDiTor (Ours)</strong></span>
+                        </div>
+                        <div class="video-compare-container-face" data-slider>
+                          <video class="left-video" id="face-left-video-2" loop autoplay muted playsinline preload="metadata">
+                            <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/ours/flame_salmon_1_fire_emergency.mp4" type="video/mp4">
+                          </video>
+                          <div class="slider-bar">
+                            <div class="slider-divider"></div>
+                            <video class="right-video" id="face-right-video-2" loop autoplay muted playsinline preload="metadata">
+                              <source src="./Videos_for_project_page/static/baselines_rendering/instruct4dgs_flame_salmon_1_fire_emergency.mp4" type="video/mp4">
+                            </video>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            
+            <script>
+            (function() {
+              var containers = document.querySelectorAll('.video-compare-container-face');
+              containers.forEach(function(container) {
+                var vids = container.querySelectorAll('video');
+                vids.forEach(function(v) {
+                  v.muted = true;
+                  v.play().catch(function(){});
+                });
+              });
+            })();
+            </script>
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Custom Slider Logic -->
+            <script src="./Videos_for_project_page/static/js/slidebar-container.js"></script>    
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Video -->
+    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 70px 0 0;">
+        <div class="column" style="width: 100%; padding: 0;">
+            <h2 class="title is-3"> 4D Rendering Results </h2> 
+            
+            <!-- Single large video instead of carousel -->
+            <section class="hero is-light is-small">
+              <div class="hero-body">
+                <div class="container">
+                  <figure style="max-width: 1280px; margin: 0 auto;">
+                    <video id="result-video" controls autoplay loop muted playsinline preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+                      <source src="./Videos_for_project_page/Dynamic-eDiTor_renderings_720.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </figure>
+                </div>
+              </div>
+            </section>
+            
+<br>
+
+
+<br><br>
+
+  <h2 class="subtitle" style="font-family: 'Kalam', cursive; font-size: 1.4em;">
+    Sync settings are enabled, so videos might not play immediately 😔 <br>
+    Please refresh and wait for the page to load! Thank you for your patience 😊
+  </h2>
+
+
+<br><br> <br><br>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+    <!-- Comparison -->
+    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 15px 10px 0;">
+        <div class="column" style="width: 100%; padding: 0;">
+            <h2 class="title is-3"> Qualitative comparison </h2>
+            <br> 
+
+     
+      <div class="content has-text-justified">
+    <div class="figure-wrapper">
+      <img src="./Videos_for_project_page/static/imgs/qualitative_comparison1.png" alt="Teaser" class="centered-image" style="width: 90%;"  margin-top: 60px />
+      <figcaption class="custom-caption">
+      <strong> Qualitative comparison1. </strong>
+      Dynamic-eDiTor enables more robust non-rigid content manipulation and achieves more complete edits of the 4D scene. The top-row displays the original rendered frames, while the following rows show the edited 4DGS renderings produced by each baseline. Our method (bottom-row) outperforms all baselines in both text alignment and overall editing fidelity, while maintaining strong temporal and spatial consistency.  
+      </figcaption>
+      <br><br>
+      <img src="./Videos_for_project_page/static/imgs/qualitative_comparison2.png" alt="Teaser" class="centered-image" style="width: 90%;"  margin-top: 60px />
+      <figcaption class="custom-caption">
+        <strong> Qualitative comparison2. </strong>
+        Dynamic-eDiTor enables more robust non-rigid content manipulation and achieves more complete edits of the 4D scene. The top-row displays the original rendered frames, while the following rows show the edited 4DGS renderings produced by each baseline. Our method (bottom-row) outperforms all baselines in both text alignment and overall editing fidelity, while maintaining strong temporal and spatial consistency.  
+      </figcaption>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<br><br><br>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./Videos_for_project_page/static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            We borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            A heartfelt thanks to the original creators!
+            <br>(Logo from Gemini.)
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</html>

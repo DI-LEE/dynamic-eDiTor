@@ -1,0 +1,185 @@
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.video-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.left-video-wrapper {
+  flex: 0 1 calc(33.33% - 0px);
+  max-width: calc(33.33% - 0px);
+  border-right: 3px dotted #5a5a5a; 
+  padding-right: 5px; 
+  margin-right: 3px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.left-video-wrapper2 {
+  flex: 0 1 calc(25% - 0px);
+  max-width: calc(25% - 0px);
+  border-right: 3px dotted #5a5a5a; 
+  padding-right: 15px; 
+  margin-right: 3px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+ /* fangzhou, person */
+ .left-video-wrapper3 {
+  flex: 0 1 calc(18% - 10px);
+  max-width: calc(18% - 10px);
+  border-right: 3px dotted #5a5a5a;
+  padding-right: 50px; /* 경계선 간격 */
+  margin-left: 50px;
+  box-sizing: content-box; /* 크기 조정 문제 방지 */
+}
+
+
+
+.video-wrapper {
+  flex: 0 1 calc(33.33% - 1px);
+  max-width: calc(33.33% - 1px);
+  text-align: center;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* 정사각형 비디오 행 간격 */
+.video-row-square {
+  justify-content: space-between; /* 비디오 간 간격 균등 배치 */
+}
+
+.video-row-portrait {
+  justify-content: space-between; /* 비디오 간 간격 균등 분배 */
+}
+
+/* 정사각형 비디오 */
+.video-row-square .video-wrapper {
+  aspect-ratio: 1; /* 정사각형 */
+  flex: 0 1 calc(25% - 20px); /* 너비를 간격에 맞게 설정 */
+  max-width: calc(25% - 20px);
+  margin: 0 10px;
+
+}
+
+/* 세로 비디오 */
+.video-row-portrait .video-wrapper {
+  aspect-ratio: 4/ 5; /* 세로 비율 */
+
+  flex: 0 1 calc(18% - 10px); /* 세로형 너비 */
+  max-width: calc(18% - 10px);
+  margin: 0 50px;
+
+}
+
+figcaption {
+  margin-top: 0px;
+  font-size: 1em;
+  color: #555;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Center two-up pairs inside carousel slides */
+.carousel .item .video-row {
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.carousel .item .left-video-wrapper3 {
+  margin-left: 0; /* remove extra left offset in carousel */
+  padding-right: 20px;
+}
+
+/* 2x4 Grid layout for teaser */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.video-grid .grid-item {
+  text-align: center;
+}
+
+.video-grid .grid-item video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Compact variant to shrink overall grid width */
+.video-grid.compact {
+  max-width: 900px;
+  margin: 0 auto;
+  column-gap: 6px;
+  row-gap: 0px;
+  grid-template-columns: 1fr 1fr var(--center-gutter, 16px) 1fr 1fr; /* add center gutter column */
+}
+
+.video-grid.compact .grid-item figcaption {
+  font-size: 0.85em;
+  line-height: 1.2;
+  margin-top: 0px !important;
+}
+
+/* Wider container for comparison sliders only */
+.compare-wide {
+  max-width: 1800px;
+}
+
+/* Break out of parent container to use full viewport width */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Make sliders fill their columns */
+.compare-wide .custom-video-block-face .video-compare-container-face {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.compare-wide .custom-video-block-face video {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Place items to skip the center gutter column */
+.video-grid.compact .grid-item:nth-child(1) { grid-column: 1; }
+.video-grid.compact .grid-item:nth-child(2) { grid-column: 2; }
+.video-grid.compact .grid-item:nth-child(3) { grid-column: 4; }
+.video-grid.compact .grid-item:nth-child(4) { grid-column: 5; }
+.video-grid.compact .grid-item:nth-child(5) { grid-column: 1; }
+.video-grid.compact .grid-item:nth-child(6) { grid-column: 2; }
+.video-grid.compact .grid-item:nth-child(7) { grid-column: 4; }
+.video-grid.compact .grid-item:nth-child(8) { grid-column: 5; }
+
+/* Ensure overlay bar doesn't block clicks for play/pause toggling */
+.video-compare-container-face .slider-bar,
+.video-compare-container-face .slider-bar .slider-divider {
+  pointer-events: none;
+}
+
+/* Indicate clickability */
+.video-compare-container-face,
+.video-compare-container-face video {
+  cursor: pointer;
+}
+

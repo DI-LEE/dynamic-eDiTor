@@ -110,7 +110,7 @@ layout: null
                 </a>
               </span> -->
               <span class="link-block">
-                <a href=""
+                <a href="https://www.arxiv.org/abs/2512.00677"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -132,7 +132,7 @@ layout: null
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://github.com/DI-LEE/dynamic_eDiTor"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -455,9 +455,59 @@ window.addEventListener('pageshow', playAllPageVideos);
 </div>
 </div>
 
-<br><br><br>
 
 
+
+<section class="section" id="citation">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 50px 0 0;">
+      <div class="column" style="width: 80%; padding: 0;">
+        <h2 class="title is-3"> Citation </h2>
+        <div class="content has-text-justified">
+          <p>If you find this work useful, please cite:</p>
+          <div class="field has-addons is-justify-content-flex-end" style="margin-bottom: 10px;">
+            <div class="control">
+              <button class="button is-small is-dark" id="copy-bibtex-btn" aria-label="Copy BibTeX">Copy BibTeX</button>
+            </div>
+          </div>
+          <pre id="bibtex-entry" style="white-space: pre; overflow-x: auto; background:#f5f5f5; padding: 16px; border-radius: 8px; border: 1px solid #e5e5e5;"><code>@article{lee2025dynamic,
+  title={Dynamic-eDiTor: Training-Free Text-Driven 4D Scene Editing with Multimodal Diffusion Transformer},
+  author={Lee, Dong In and Doh, Hyungjun and Chi, Seunggeun and Duan, Runlin and Kim, Sangpil and Ramani, Karthik},
+  journal={arXiv preprint arXiv:2512.00677},
+  year={2025}
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  var btn = document.getElementById('copy-bibtex-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var src = document.getElementById('bibtex-entry');
+    if (!src) return;
+    var text = src.innerText;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = 'Copied!';
+        setTimeout(function () { btn.textContent = 'Copy BibTeX'; }, 1500);
+      }).catch(function () {});
+    } else {
+      // Fallback for older browsers
+      var temp = document.createElement('textarea');
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(temp);
+      btn.textContent = 'Copied!';
+      setTimeout(function () { btn.textContent = 'Copy BibTeX'; }, 1500);
+    }
+  });
+})();
+</script>
 
 <footer class="footer">
   <div class="container">

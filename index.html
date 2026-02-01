@@ -156,7 +156,7 @@ layout: null
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 
 <!-- Teaser Videos Section -->
@@ -273,17 +273,18 @@ window.addEventListener('pageshow', playAllPageVideos);
 
 <!-- Main Figure Section -->
 
-<section class="hero teaser">
+<section class="hero teaser" style="padding-top: 1rem; margin-top: 0;">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0px 0 0;">
         <div class="column" style="width: 10%; padding: 0;">
             <h2 class="title is-3"> Overview </h2> 
-        <img src="./Videos_for_project_page/static/imgs/Main_fig.png" alt="Teaser" style="width: 70%; height: auto;" />
-        <figcaption class="custom-caption">
-          <strong> Dynamic-eDiTor Overview.</strong> We represent the multi-view video as a unified camera-time grid. Dynamic-eDiTor combines <strong>Spatio-Temporal Sub-Grid Attention (STGA)</strong>, which performs locally coherent cross-view and temporal fusion within each sub-grid, with <strong>Context Token Propagation (CTP)</strong>, which globally propagates the aggregated features across the grid via Full Token Inheritance and Flow-guided Token Replacement for robust spatio-temporal consistency enforcement. Together, these modules enable seamless, globally consistent multi-view video editing without additional training, while directly optimizing the pre-trained 4DGS.
-      </figcaption>
-  </figure>
+        <figure style="margin: 0 auto;">
+          <img src="./Videos_for_project_page/static/imgs/Main_fig.png" alt="Teaser" style="width: 70%; height: auto;" />
+          <figcaption class="custom-caption">
+            <strong> Dynamic-eDiTor Overview.</strong> We represent the multi-view video as a unified camera-time grid. Dynamic-eDiTor combines <strong>Spatio-Temporal Sub-Grid Attention (STGA)</strong>, which performs locally coherent cross-view and temporal fusion within each sub-grid, with <strong>Context Token Propagation (CTP)</strong>, which globally propagates the aggregated features across the grid via Full Token Inheritance and Flow-guided Token Replacement for robust spatio-temporal consistency enforcement. Together, these modules enable seamless, globally consistent multi-view video editing without additional training, while directly optimizing the pre-trained 4DGS.
+          </figcaption>
+        </figure>
     </div>    
   </div>
 </div>
@@ -311,94 +312,27 @@ window.addEventListener('pageshow', playAllPageVideos);
     <br><br><br>
 
 
-    <!-- Comparison Slider -->
-
-          <h2 class="subtitle" style="font-family: 'Kalam', cursive; text-align: center; font-size: 1.5em;">
-            📷 <strong> Click </strong> on video to play or pause. <strong> Move</strong> mouse to change the hover  📷
-          </h2>
-
-            <!-- Tabs -->
-            <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <div class="container h-100 pt-3 pb-3">
-                  <div class="row g-4">
-                    <div class="col-12 col-lg-6">
-                      <div class="custom-video-block-face" style="width: 60%;">
-                        <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 18px; margin-bottom: 8px;">
-                          "Change his clothes into a <span style='color: #b20e0e;'>red shirt</span>"
-                        </h3>
-                        <div style="display: flex; justify-content: space-between; text-align: center; font-size: 15px; margin-bottom: 6px; padding: 5px;">
-                          <span style="margin-left: 10px;"><strong>Ctrl-D</strong></span>
-                          <span style="margin-right: 10px;"><strong>Dynamic-eDiTor (Ours)</strong></span>
-                        </div>
-                        <div class="video-compare-container-face" data-slider>
-                          <video class="left-video" id="face-left-video" loop autoplay muted playsinline preload="metadata">
-                            <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/ours/sear_steak_red_shirt.mp4" type="video/mp4">
-                            <!-- <source src="./Dynamic-eDiTor_video_result/ours/sear_steak_superman.mp4" type="video/mp4"> -->
-                          </video>
-                          <div class="slider-bar">
-                            <div class="slider-divider"></div>
-                            <video class="right-video" id="face-right-video" loop autoplay muted playsinline preload="metadata">
-                              <source src="./Videos_for_project_page/static/baselines_rendering/ctrl-d_sear_steak_redshirt.mp4" type="video/mp4">
-                              <!-- <source src="./static/baselines_rendering/ctrl-d_sear_steak_superman.mp4" type="video/mp4"> -->
-                            </video>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                      <div class="custom-video-block-face" style="width: 60%;">
-                        <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 18px; margin-bottom: 8px;">
-                          Change the scene into a <span style="color: #b20e0e;">fire emergency</span>"
-                        </h3>
-                        <div style="display: flex; justify-content: space-between; text-align: center; font-size: 15px; margin-bottom: 6px; padding: 5px;">
-                          <span style="margin-left: 10px;"><strong>Instruct-4DGS</strong></span>
-                          <span style="margin-right: 10px;"><strong>Dynamic-eDiTor (Ours)</strong></span>
-                        </div>
-                        <div class="video-compare-container-face" data-slider>
-                          <video class="left-video" id="face-left-video-2" loop autoplay muted playsinline preload="metadata">
-                            <source src="./Videos_for_project_page/Dynamic-eDiTor_video_result/ours/flame_salmon_1_fire_emergency.mp4" type="video/mp4">
-                          </video>
-                          <div class="slider-bar">
-                            <div class="slider-divider"></div>
-                            <video class="right-video" id="face-right-video-2" loop autoplay muted playsinline preload="metadata">
-                              <source src="./Videos_for_project_page/static/baselines_rendering/instruct4dgs_flame_salmon_1_fire_emergency.mp4" type="video/mp4">
-                            </video>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            
-            <script>
-            (function() {
-              var containers = document.querySelectorAll('.video-compare-container-face');
-              containers.forEach(function(container) {
-                var vids = container.querySelectorAll('video');
-                vids.forEach(function(v) {
-                  v.muted = true;
-                  v.play().catch(function(){});
-                });
-              });
-            })();
-            </script>
-            <!-- Bootstrap JS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-            <!-- Custom Slider Logic -->
-            <script src="./Videos_for_project_page/static/js/slidebar-container.js"></script>    
-
-
-
-<section class="section">
+<section class="section" style="padding-top: 1.5rem; padding-bottom: 1rem;">
   <div class="container is-max-desktop">
     <!-- Video -->
     <div class="columns is-centered has-text-centered" style="width: 100%; margin: 70px 0 0;">
         <div class="column" style="width: 100%; padding: 0;">
             <h2 class="title is-3"> 4D Rendering Results </h2> 
             
+            <!-- Single large video instead of carousel -->
+            <section class="hero is-light is-small">
+              <div class="hero-body">
+                <div class="container">
+                  <figure style="max-width: 300px; margin: 0 auto;">
+                    <video id="result-video" controls autoplay loop muted playsinline preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+                      <source src="./Videos_for_project_page/Hypernerf.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </figure>
+                </div>
+              </div>
+            </section>
+
             <!-- Single large video instead of carousel -->
             <section class="hero is-light is-small">
               <div class="hero-body">
@@ -412,28 +346,17 @@ window.addEventListener('pageshow', playAllPageVideos);
                 </div>
               </div>
             </section>
-            
-<br>
 
+     
 
-<br><br>
-
-  <h2 class="subtitle" style="font-family: 'Kalam', cursive; font-size: 1.4em;">
-    Sync settings are enabled, so videos might not play immediately 😔 <br>
-    Please refresh and wait for the page to load! Thank you for your patience 😊
-  </h2>
-
-
-<br><br> <br><br>
-
-<section class="hero teaser">
+<section class="hero teaser" style="padding-top: 0.5rem; margin-top: 0;">
   <div class="container is-max-desktop">
-    <div class="hero-body">
+    <div class="hero-body" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
     <!-- Comparison -->
-    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 15px 10px 0;">
+    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 5px 10px 0;">
         <div class="column" style="width: 100%; padding: 0;">
             <h2 class="title is-3"> Qualitative comparison </h2>
-            <br> 
+            
 
      
       <div class="content has-text-justified">
